@@ -55,32 +55,71 @@ scores.forEach( function(item, index){
 //---Question 4--\\
 //----Find the minimum-----\\
 
-var Acount, Bcount, Ccount, Dcount, Fcount = 0, currentGradeCount;
+var gradesTracker = [{ 
+	grade: "A", numberofstudents: 0
+},{
+	grade: "B", numberofstudents: 0,
+},{
+	grade: "C", numberofstudents: 0,
+},{
+	grade: "D", numberofstudents: 0,
+},{
+	grade: "F", numberofstudents: 0
+} 
+];
+	
+
+
+var currentGradeCount;
+
 for(currentGradeCount in grades){
 
-	if(currentGradeCount == "A"){
-		Acount+=1;
+	if(grades[currentGradeCount] == "A"){
+		gradesTracker.grade("A").numberofstudents++;
 	}
-	else if(currentGradeCount == "B"){
-		Bcount+=1;
+	else if(grades[currentGradeCount] == "B"){
+		gradesTracker.grade("B").numberofstudents++;
 	}
-	else if(currentGradeCount == "C"){
-		Ccount+=1;
+	else if(grades[currentGradeCount] == "C"){
+		gradesTracker.grade("C").numberofstudents++;
 	}
-	else if(currentGradeCount == "D"){
-		Dcount+=1;
+	else if(grades[currentGradeCount] == "D"){
+		gradesTracker.grade("D").numberofstudents++;
 	}
 	else{
-		Fcount+=1;
+		gradesTracker.grade("F").numberofstudents++;
 	}
 
 }
 //---Question 5--\\
 //----Find the minimum-----\\
+/*
 
-var minGradeAchieved = Math.min(Acount, Bcount, Ccount, Dcount, Fcount);
+Loop,
+if(Temp > letter.value){
+temp=letter.value;
+Most freq = letter;
+}
 
-console.log(minGradeAchieved);
+*/
+var temp = 0;
+var tempfreq;
+var gradelist = ["A", "B", "C", "D"];
+for(currentGradeCount in gradesTracker){
+
+    if( temp > gradesTracker.grade(`${gradelist[currentGradeCount]}`)){
+        temp = gradesTracker.grade(`${gradelist[currentGradeCount]}`);
+        tempfreq = gradesTracker.grade(`${gradelist[currentGradeCount];.grade}`);
+    }
+    
+    
+
+}
+
+
+
+
+
 
 /*
 var  _count = 0;
